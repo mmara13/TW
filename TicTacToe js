@@ -100,7 +100,7 @@ function main() {
         s=splayer;
       }
       //functie care sa verifice daca o mutare este valida
-      if (tablaJoc[pos-1]==="?" || tablaJoc[pos-1]===s){
+      if (tablaJoc[pos-1]==="?" || tablaJoc[pos-1]!=s){
         return true;
       }
       else{
