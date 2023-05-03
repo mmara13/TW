@@ -59,8 +59,13 @@ function main() {
 
   printtt(tablaJoc); //afisam tabla la inceput
   while(!win() || !draw() || !lost()){ //verificam sa nu se fi terminat jocul
+    let row1 = tablaJoc[0] + " | " + tablaJoc[1] + " | " + tablaJoc[2]; //fac asta ca sa pot afisa si in prompt
+    let row2 = tablaJoc[3] + " | " + tablaJoc[4] + " | " + tablaJoc[5];
+    let row3 = tablaJoc[6] + " | " + tablaJoc[7] + " | " + tablaJoc[8];
+    let tableString = row1 + "\n" + row2 + "\n" + row3;
+
     if(currentplayer===splayer){ //daca primul player e chiar playerul
-      pos= parseInt(prompt("Unde vrei sa pui urmatorul semn?")); //citim pozitia
+      pos= parseInt(prompt(tableString + "\n" + "Unde vrei sa pui urmatorul semn?")); //citim pozitia
       if(valid(pos, currentplayer)){
         tablaJoc[pos-1]=splayer;
         if(win()){
